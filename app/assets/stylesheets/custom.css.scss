@@ -3,3 +3,21 @@
 .no-rounded-corner{
   border-radius: 0 !important;
 }
+
+.no-rounded-left{
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+.no-rounded-right{
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.max-width-6{
+  max-width: 6em !important;
+}
+
+.chatbox{
+  height: 50vh;
+}

@@ -1,1 +1,57 @@
-<h1>Root page</h1>
+<h2 class="ui center aligned medium icon header">
+  <i class="circular icon">
+    <div class="ui middle aligned tiny image">
+      <img src="/images/logo-192.png" style="width: 3.5em; margin-bottom: 1em;">
+    </div>
+  </i>  
+  Say something
+</h2>
+
+<div class="ui two column grid">
+  <div class="twelve wide column">
+   <div class="ui fluid raised card chatbox">
+      <div class="content">
+        <div class="ui feed">       
+          <%= render @messages %>
+        </div>
+      </div>
+      <div class="extra content">
+        <%= form_for(@message, html: {class: "ui reply form no-rounded-right", role: "form"}, url: message_path) do |f| %>
+          <div class="field">
+            <div class="ui fluid icon input">
+              <%= f.text_field :body, placeholder: "Enter your messages..."  %>
+              <%= f.button '<i class="inverted paper plane icon"></i>'.html_safe, class: "ui icon blue button no-rounded-left"%>
+            </div>
+          </div>          
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="four wide column">
+    <div class="ui fluid raised card chatbox">
+      <div class="content">
+        <div class="ui one column center aligned">
+          <div class="row">
+            <h4>Online friends</h4>
+          </div>
+          <div class="row">
+            <div class="ui divider"></div>
+          </div>
+          <div class="row">
+            <div class="ui large labels">
+              <a class="ui grey label">Grey</a>
+              <a class="ui grey label">Grey</a>
+              <a class="ui grey label">Grey</a>
+              <a class="ui grey label">Grey</a>
+              <a class="ui grey label">Grey</a>
+              <a class="ui grey label">Grey</a>
+              <a class="ui grey label">Grey</a>
+              <a class="ui grey label">Grey</a>
+            </div>
+          </div>          
+        </div>        
+      </div>      
+    </div>
+  </div>
+</div>
