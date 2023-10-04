@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_03_120632) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_04_070642) do
   create_table "messages", force: :cascade do |t|
     t.text "body"
     t.integer "user_id"
@@ -24,6 +24,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_03_120632) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+    t.boolean "online", default: false
+    t.string "color", default: "grey"
   end
 
 end

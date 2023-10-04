@@ -39,18 +39,25 @@
           <div class="row">
             <div class="ui divider"></div>
           </div>
-          <div class="row">
-            <div class="ui large labels">
-              <a class="ui grey label">Grey</a>
-              <a class="ui grey label">Grey</a>
-              <a class="ui grey label">Grey</a>
-              <a class="ui grey label">Grey</a>
-              <a class="ui grey label">Grey</a>
-              <a class="ui grey label">Grey</a>
-              <a class="ui grey label">Grey</a>
-              <a class="ui grey label">Grey</a>
+          <div class="row" id="users">
+            <div class="ui large labels" id="user-container">
+              <%= render @users %>
             </div>
-          </div>          
+          </div>  
+          <div class="row">
+            <div class="ui horizontal divider">Your color</div>
+            <div class="extra content">
+              <%= form_for(@select_color, html: {class: "ui reply form no-rounded-right", role: "form"}, url: color_path, remote: true) do |f| %>
+                <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                <div class="field">
+                  <div class="ui fluid icon input">
+                    <%= f.select :color, @color, selected: current_user.color.capitalize %>
+                    <%= f.button '<i class="inverted adjust icon"></i>'.html_safe, class: "ui icon blue button no-rounded-left"%>
+                  </div>
+                </div>          
+              <% end %>
+            </div>            
+          </div>        
         </div>        
       </div>      
     </div>

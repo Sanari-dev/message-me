@@ -4,12 +4,14 @@
     <div class="right menu">
       <% if logged_in? %>
         <div class="ui dropdown item">  
-          <%= current_user.username %>
+          <div class="user-color userid<%=current_user.id%> ui inverted <%= current_user.color %> button">
+            <%= current_user.username %>
+          </div>          
           <i class="dropdown icon"></i>  
-            <div class="menu">
-              <%= link_to "Profile", edit_user_path(current_user), class: "item", id: "profile" %>
-              <%= link_to "Logout", logout_path, class: "item", data:{ turbo_method: :delete}, id: "logout" %>
-            </div>        
+          <div class="menu">
+            <%= link_to "Profile", edit_user_path(current_user), class: "item", id: "profile-button" %>
+            <%= link_to "Logout", logout_path, class: "item", data:{ turbo_method: :delete}, id: "logout" %>
+          </div>        
         </div>
       <% else %>
         <div class="item">

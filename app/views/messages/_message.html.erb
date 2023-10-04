@@ -1,7 +1,10 @@
 <div class="event">
     <div class="content">
       <div class="summary">
-         <em><%= message.user.username %></em>: <%= message.body %>
+        <div class="user-color userid<%=message.user.id%> ui tiny <%= message.user.color %> label">
+          <%= message.user.username %>
+        </div>
+        : <%= message.body %>
       </div>
     </div>
   </div>

@@ -20,6 +20,24 @@ window.submit_message = function() {
   })
 }
 
+window.add_user_label = function(e) {  
+  if(e){
+    $('#user-container').append('<a class="user-color userid'+e.user.id+' ui '+e.user.color+' label no-pointer" id="'+e.user.id+'" >'+e.user.username+'</a>');
+  }    
+}
+
+window.remove_user_label = function(e) {  
+  if(e){
+    $('#'+e).remove();}
+  }
+    
+
+window.update_user_color = function(e) {  
+  if(e){
+    $('.user-color.userid'+e.user.id).removeClass(e.last_color).addClass(e.user.color);
+  }    
+}
+
 $(document).on('turbo:load', function() {
   $('.ui.dropdown').dropdown();
   $('.message .close').on('click', function() {
