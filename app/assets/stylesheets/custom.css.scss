@@ -21,3 +21,8 @@
 .chatbox{
   height: 50vh;
 }
+
+#messages{
+  overflow: auto;
+  height: 15em;
+}
